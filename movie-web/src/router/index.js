@@ -26,6 +26,12 @@ const routes = [
     meta: { title: '正在播放' }
   },
   {
+    path: '/admin',
+    name: 'admin',
+    component: () => import('../views/AdminView.vue'),
+    meta: { title: '管理中心' }
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: () => import('../views/NotFoundView.vue'),

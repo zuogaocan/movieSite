@@ -1,0 +1,66 @@
+{
+  "sites": [
+    {
+      "id": "default",
+      "name": "默认资源站",
+      "apiBaseUrl": "https://json02.heimuer.xyz/api.php/provide/vod",
+      "playerUrl": "https://hoplayer.com/index.html?url=",
+      "active": true,
+      "addTime": "2023-03-28T00:00:00.000Z"
+    },
+    {
+      "name": "非凡资源",
+      "apiBaseUrl": "http://ffzy5.tv/api.php/provide/vod",
+      "playerUrl": "https://hoplayer.com/index.html?url=",
+      "active": true,
+      "id": "ffzy",
+      "addTime": "2025-03-31T03:16:49.497Z"
+    },
+    {
+      "id": "lzizy",
+      "name": "量子采集站",
+      "apiBaseUrl": "https://cj.lziapi.com/api.php/provide/vod",
+      "playerUrl": "https://hoplayer.com/index.html?url=",
+      "active": true,
+      "addTime": "2025-04-01T02:33:07.304Z"
+    },
+    {
+      "name": "360资源站",
+      "apiBaseUrl": "https://360zy5.com/api.php/provide/vod",
+      "playerUrl": "https://hoplayer.com/index.html?url=",
+      "active": true,
+      "id": "360zy",
+      "addTime": "2025-04-02T00:00:00.000Z"
+    },
+    {
+      "name": "华为资源",
+      "apiBaseUrl": "https://cjhwba.com/api.php/provide/vod",
+      "playerUrl": "https://hoplayer.com/index.html?url=",
+      "active": true,
+      "id": "hwzy",
+      "addTime": "2025-04-02T00:00:00.000Z"
+    },
+
+
+
+
+    {
+      "name": "IKUN资源",
+      "apiBaseUrl": "https://ikunzy.net/api.php/provide/vod",
+      "playerUrl": "https://hoplayer.com/index.html?url=",
+      "active": true,
+      "id": "ikunzy",
+      "addTime": "2025-04-02T00:00:00.000Z"
+    },
+
+
+    {
+      "name": "速播资源",
+      "apiBaseUrl": "https://www.suboziyuan.net/api.php/provide/vod",
+      "playerUrl": "https://hoplayer.com/index.html?url=",
+      "active": true,
+      "id": "sbzy",
+      "addTime": "2025-04-02T00:00:00.000Z"
+    }
+  ]
+}

@@ -4,31 +4,25 @@ const router = express.Router();
 // 导入API路由
 const searchRouter = require('./api/search');
 const detailRouter = require('./api/detail');
+const sitesRouter = require('./api/sites');
+
+// 主页路由
+router.get('/', (req, res) => {
+  res.json({
+    code: 0,
+    message: '影视资源API服务',
+    version: '1.0.0',
+    apis: [
+      '/api/search - 搜索资源',
+      '/api/detail - 获取详情',
+      '/api/sites - 站点管理'
+    ]
+  });
+});
 
 // API路由
 router.use('/api/search', searchRouter);
 router.use('/api/detail', detailRouter);
-
-// 根路径
-router.get('/', (req, res) => {
-  res.json({
-    message: '视频资源API服务',
-    version: '1.0.0',
-    endpoints: [
-      {
-        path: '/api/search',
-        method: 'GET',
-        description: '搜索视频资源',
-        params: ['keyword']
-      },
-      {
-        path: '/api/detail',
-        method: 'GET',
-        description: '获取视频详情',
-        params: ['id']
-      }
-    ]
-  });
-});
+router.use('/api/sites', sitesRouter);
 
 module.exports = router; 

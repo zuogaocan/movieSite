@@ -110,6 +110,7 @@ const route = useRoute();
 const router = useRouter();
 const movieId = computed(() => route.params.id);
 const currentEpisode = computed(() => route.query.episode || '');
+const sourceId = computed(() => route.query.source || '');
 
 const movie = ref(null);
 const loading = ref(false);
@@ -147,7 +148,7 @@ const fetchMovieDetail = async () => {
   error.value = '';
   
   try {
-    const data = await movieApi.getDetail(movieId.value);
+    const data = await movieApi.getDetail(movieId.value, sourceId.value);
     movie.value = data;
     console.log('详情数据:', movie.value); // 调试用
     
@@ -165,7 +166,11 @@ const fetchMovieDetail = async () => {
 
 // 播放视频
 const playVideo = (id, episode) => {
-  router.push({ name: 'play', params: { id, episode } });
+  router.push({ 
+    name: 'play', 
+    params: { id, episode },
+    query: { source: sourceId.value }
+  });
 };
 
 // 图片加载失败处理

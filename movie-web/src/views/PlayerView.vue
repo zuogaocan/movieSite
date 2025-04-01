@@ -93,6 +93,7 @@ const route = useRoute();
 const router = useRouter();
 const movieId = computed(() => route.params.id);
 const currentEpisode = computed(() => route.params.episode || '');
+const sourceId = computed(() => route.query.source || ''); // 添加源站点ID
 
 const movie = ref(null);
 const loading = ref(false);
@@ -201,7 +202,8 @@ const fetchMovieDetail = async () => {
   error.value = '';
   
   try {
-    const data = await movieApi.getDetail(movieId.value);
+    // 传入站点来源参数
+    const data = await movieApi.getDetail(movieId.value, sourceId.value);
     movie.value = data;
     
     if (!data) {
@@ -227,7 +229,11 @@ const fetchMovieDetail = async () => {
 
 // 播放指定剧集
 const playEpisode = (episode) => {
-  router.push({ name: 'play', params: { id: movieId.value, episode } });
+  router.push({ 
+    name: 'play', 
+    params: { id: movieId.value, episode },
+    query: { source: sourceId.value } // 保持站点来源ID
+  });
 };
 
 // 是否有上一集
